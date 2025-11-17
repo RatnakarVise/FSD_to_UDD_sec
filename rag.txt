@@ -1,0 +1,99 @@
+#SECTION: 1. Purpose
+type: text
+description: State the purpose of the Unified Design Document.
+prompt: Write a concise, formal purpose describing why this UDD exists and what outcome the client should expect.
+
+#SECTION: 2. Scope
+type: text
+description: In/Out scope for the solution.
+prompt: Describe in-scope and out-of-scope items for the UDD, focusing on processes, objects, and users impacted.
+
+#SECTION: 3. Structure
+type: text
+description: Logical ABAP structure used as the in-memory data model for this solution. Only mention custom structures which start with Z or Y.
+prompt: 
+Write a complete description of the ABAP structure used in this solution.  
+Combine the purpose of earlier subsections (3, 3.1, 3.2):
+
+- Describe the custom ABAP structure (Z/Y) and related internal tables used as the in-memory data model.  
+- Explain the functional requirements that make this structure necessary (e.g., file upload rows, header/item details, validation flags, error messages, simulation vs. actual posting indicators).  
+- Provide a technical overview such as key fields, processing flags, and important components.  
+- Do NOT describe database tables, CDS, FMs, or global classes here.  
+- Create a table with all the fields and its data elements and primary key 
+Keep this section strictly focused on the structure and its role in the data model.
+
+#SECTION: 4. Table
+type: text
+description: Technical and functional details of custom database tables. Only mention custom tables starting with Z or Y.
+prompt:
+Combine the logic of prior subsections (4, 4.1, 4.2, 4.3):
+
+- Provide an introduction describing the purpose of the custom table (audit, logging, reporting, traceability).  
+- Explain why the table is needed from a functional perspective.  
+- Describe the data source, key fields, and their business meaning.  
+- Give technical architecture details: keys, foreign keys, table attributes, and technical settings.  
+- If helpful, summarize field names and data elements in text (NOT in markdown table).  
+- Create a table with all the fields and its data elements and primary key 
+Stay strictly within custom tables only.
+
+#SECTION: 5. Value Help
+type: text
+description: Value help requirements. Only mention custom value helps starting with Z or Y.
+prompt:
+Merge earlier subsections (5, 5.1, 5.2):
+
+- Explain where the value help is used and when it is triggered.  
+- Describe the functional requirement: what users select, what filtering logic they expect, and what fields must appear.  
+- Describe the data source that powers the value help (custom table/view fields).  
+- Create a table with all the fields and its data elements and primary key 
+Keep this section focused ONLY on custom value help logic.
+
+#SECTION: 6. CDS
+type: text
+description: CDS purpose, functional role, and technical details. Only mention custom CDS views starting with Z or Y.
+prompt:
+Combine earlier subsections (6, 6.1, 6.2):
+
+- Describe why a CDS view is required and how it is consumed (ALV, Fiori, reporting).  
+- Explain functional needs satisfied by the CDS (derived values, enriched datasets, simplified join logic).  
+- Describe CDS data sources, associations, important fields, and keys.  
+- Create a table with all the fields and its data elements and primary key 
+Avoid code; provide a clear narrative.
+
+#SECTION: 7. Function Module
+type: text
+description: Complete description of the function module's purpose, business requirement, and interface.
+prompt:
+Merge earlier subsections (7, 7.1, 7.2):
+
+- Describe when and why the FM is called.  
+- Explain the functional requirement it fulfills (computation, validation, enrichment, posting).  
+- Describe inputs, outputs, exceptions, and any critical logic.  
+Keep the description technical but concise.
+
+#SECTION: 8. Global Class
+type: text
+description: Combined high-level, architectural, and technical description of the global class.
+prompt:
+Merge earlier subsections (8, 8.1–8.7):
+
+- Describe the class role and its responsibilities.  
+- Explain architecture: public methods, private logic, interfaces, inheritance.  
+- Describe major attribute groups and why they exist.  
+- Summarize method groups by purpose (initialization, fetch, validate, process, log, commit).  
+- Explain exception handling strategy.  
+- Highlight OOP benefits: encapsulation, maintainability, reuse, extensibility.  
+Provide a clean narrative, no code.
+
+#SECTION: 9. Report Program
+type: text
+description: Complete overview of the report program.
+prompt:
+Merge earlier subsections (9, 9.1–9.7):
+
+- Describe the report’s role and end-to-end flow.  
+- Explain functional requirements: user input, selections, validations.  
+- Describe data sources (EKKO/EKPO, Z tables, BAPIs).  
+- Explain technical architecture including selection screen, processing logic, ALV output, and includes (TOP, SEL, F01, ALV).  
+- Summarize core logic such as fetch, compute, validate, BAPI calls, logging, and output.  
+Keep this concise but comprehensive.

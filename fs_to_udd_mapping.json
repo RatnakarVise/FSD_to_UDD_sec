@@ -1,0 +1,40 @@
+{
+  "SECTION: 1. Purpose": [
+    "3"
+  ],
+
+  "SECTION: 2. Scope": [
+    "4"
+  ],
+
+  "SECTION: 3. Structure": [
+    "7"
+  ],
+
+  "SECTION: 4. Table": [
+    "7"
+  ],
+
+  "SECTION: 5. Value Help": [
+    "11"
+  ],
+
+  "SECTION: 6. CDS": [
+    "11"
+  ],
+
+  "SECTION: 7. Function Module": [
+    "8"
+  ],
+
+  "SECTION: 8. Global Class": [
+    "6",
+    "7",
+    "8"
+  ],
+
+  "SECTION: 9. Report Program": [
+    "6",
+    "10"
+  ]
+}
